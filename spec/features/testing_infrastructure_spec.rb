@@ -1,6 +1,9 @@
-feature 'Testing infrastructure' do
-  scenario 'Can run app and check page content' do
+feature 'Enter names' do
+  scenario 'submitting names' do
     visit('/')
-    expect(page).to have_content 'Testing infrastructure working!'
+    fill_in :player_1_name, with: 'Riya'
+    fill_in :player_2_name, with: 'Batwoman'
+    click_button 'Submit'
+    expect(page).to have_content 'Riya vs. Batwoman'
   end
 end
