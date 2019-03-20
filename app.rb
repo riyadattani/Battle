@@ -1,8 +1,10 @@
 require 'sinatra/base'
 require './lib/player.rb'
 
+
 class Battle < Sinatra::Base
   enable :sessions
+  configure(:development) { set :session_secret, "something" }
   get '/' do
     erb :index
   end
