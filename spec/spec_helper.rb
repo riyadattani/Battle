@@ -1,5 +1,5 @@
 ENV['RACK_ENV'] = 'test'
-
+require './spec/features/web_helpers'
 # require our Sinatra app file
 require File.join(File.dirname(__FILE__), '..', 'app.rb')
 
